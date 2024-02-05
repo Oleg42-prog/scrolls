@@ -22,3 +22,7 @@ def binary_mask(image):
 
 def binary_mask_255(image):
     return binary_mask(image) * 255
+
+
+def crop(img, x, y, width, height):
+    return img[y:y+height, x:x+width].copy()
