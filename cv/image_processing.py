@@ -31,3 +31,7 @@ def crop(img, x, y, width, height):
 def image_in_range(img, lower, upper):
     mask = cv2.inRange(img, lower, upper)
     return cv2.bitwise_and(img, img, mask=mask)
+
+
+def invert(image):
+    return 255 - image
