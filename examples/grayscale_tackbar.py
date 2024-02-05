@@ -1,7 +1,7 @@
 import cv2
 from scrolls.cv.image_processing import compress_twice, image_in_range
 from scrolls.cv.bounds_trackbar import BoundsTrackbar
-from scrolls.cv.filter_viewer import filter_viewer
+from scrolls.cv.filter_viewer import filter_video_viewer
 
 
 def image_filter(image):
@@ -11,4 +11,4 @@ def image_filter(image):
 
 
 trackbar = BoundsTrackbar('main')
-filter_viewer(0, image_filter)
+filter_video_viewer(0, image_filter)
