@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 
 class HSVTrackbar:
@@ -29,7 +30,7 @@ class HSVTrackbar:
 
     @property
     def lower(self):
-        return [self.lower_h, self.lower_s, self.lower_v]
+        return np.array([self.lower_h, self.lower_s, self.lower_v])
 
     @property
     def upper_h(self):
@@ -45,4 +46,4 @@ class HSVTrackbar:
 
     @property
     def upper(self):
-        return [self.upper_h, self.upper_s, self.upper_v]
+        return np.array([self.upper_h, self.upper_s, self.upper_v])
