@@ -1,5 +1,15 @@
+from abc import ABC
+from dataclasses import dataclass
+
 import cv2
 import numpy as np
+
+
+@dataclass
+class TrackbarDescription:
+    name: str
+    init_value: int
+    max_value: int
 
 
 class Trackbar:
@@ -14,6 +24,28 @@ class Trackbar:
     @property
     def value(self):
         return cv2.getTrackbarPos(self.trackbar_name, self.window_name)
+
+    @staticmethod
+    def from_description(window_name, description):
+        return Trackbar(window_name, **description)
+
+
+class TrackbarContainer(ABC):
+
+    def __init__(self, window_name, *descriptions):
+        self._container = {}
+        self.window_name = window_name
+
+        cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+
+        for descr in descriptions:
+            self._container[descr.name] = Trackbar.from_description(window_name, descr)
+
+    def __getitem__(self, trackbar_name):
+        return self.value(trackbar_name)
+
+    def value(self, trackbar_name):
+        return self._container[trackbar_name].value
 
 
 class BoundaryTrackbars:
