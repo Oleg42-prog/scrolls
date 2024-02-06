@@ -1,5 +1,5 @@
 from abc import ABC
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 import cv2
 import numpy as np
@@ -7,7 +7,7 @@ import numpy as np
 
 @dataclass
 class TrackbarDescription:
-    name: str
+    trackbar_name: str
     init_value: int = 0
     max_value: int = 100
 
@@ -27,7 +27,7 @@ class Trackbar:
 
     @staticmethod
     def from_description(window_name, description):
-        return Trackbar(window_name, **description)
+        return Trackbar(window_name, **asdict(description))
 
 
 class TrackbarContainer(ABC):
