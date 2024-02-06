@@ -8,13 +8,13 @@ import numpy as np
 @dataclass
 class TrackbarDescription:
     name: str
-    init_value: int
-    max_value: int
+    init_value: int = 0
+    max_value: int = 100
 
 
 class Trackbar:
 
-    def __init__(self, window_name, trackbar_name, init_value=0, max_value=255):
+    def __init__(self, window_name, trackbar_name, init_value=0, max_value=100):
         self.window_name = window_name
         self.trackbar_name = trackbar_name
 
@@ -53,8 +53,8 @@ class BoundaryTrackbars:
     def __init__(
         self,
         window_name,
-        lower_description=TrackbarDescription('lower', 0, 255),
-        upper_description=TrackbarDescription('upper', 0, 255)
+        lower_description=TrackbarDescription('lower', 0, 100),
+        upper_description=TrackbarDescription('upper', 0, 100)
     ):
         self.lower_trackbar = Trackbar.from_description(window_name, lower_description)
         self.upper_trackbar = Trackbar.from_description(window_name, upper_description)
