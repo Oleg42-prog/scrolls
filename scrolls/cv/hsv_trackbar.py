@@ -12,7 +12,7 @@ class HSVTrackbar:
 
         for color in self.colors:
             cv2.createTrackbar(f'lower {color}', window_name, 0, 255, lambda x: x)
-            cv2.createTrackbar(f'upper {color}', window_name, 0, 255, lambda x: x)
+            cv2.createTrackbar(f'upper {color}', window_name, 255, 255, lambda x: x)
 
     def get(self, bound, color):
         return cv2.getTrackbarPos(f'{bound} {color}', self.window_name)
