@@ -50,9 +50,14 @@ class TrackbarContainer(ABC):
 
 class BoundaryTrackbars:
 
-    def __init__(self, window_name, init_lower=0, init_upper=255, max_value=255, lower_name='lower', upper_name='upper'):
-        self.lower_trackbar = Trackbar(window_name, lower_name, init_value=init_lower, max_value=max_value)
-        self.upper_trackbar = Trackbar(window_name, upper_name, init_value=init_upper, max_value=max_value)
+    def __init__(
+        self,
+        window_name,
+        lower_description=TrackbarDescription('lower', 0, 255),
+        upper_description=TrackbarDescription('upper', 0, 255)
+    ):
+        self.lower_trackbar = Trackbar.from_description(window_name, lower_description)
+        self.upper_trackbar = Trackbar.from_description(window_name, upper_description)
 
     @property
     def lower(self):
