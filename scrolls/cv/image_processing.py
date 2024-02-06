@@ -17,8 +17,12 @@ def binary_mask_255(image):
     return binary_mask(image) * 255
 
 
-def crop(img, x, y, width, height):
-    return img[y:y+height, x:x+width].copy()
+def padding(p, x, y, w, h):
+    return x - p, y - p, w + p * 2, h + p * 2
+
+
+def crop(image, x, y, w, h):
+    return image[y:y+h, x:x+w].copy()
 
 
 def image_in_range(img, lower, upper):
