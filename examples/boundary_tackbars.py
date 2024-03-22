@@ -1,14 +1,28 @@
 import cv2
-from scrolls.cv.image_processing import compress_twice, image_in_range
-from scrolls.cv.filter_viewer import filter_video_viewer
+import numpy as np
+from scrolls.cv.filter_viewer import filter_image_viewer
 from scrolls.cv.trackbars import BoundaryTrackbars
 
 
 def image_filter(image):
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    image = compress_twice(image)
-    return image_in_range(image, trackbar.lower, trackbar.upper)
+
+    image = image.copy()
+
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 3
+    color = (255, 255, 255)
+    thickness = 2
+
+    text = f'{trackbar.lower} / {trackbar.upper}'
+
+    text_size, _ = cv2.getTextSize(text, font, font_scale, thickness)
+    text_width, text_height = text_size
+    x = (image.shape[1] - text_width) // 2
+    y = (image.shape[0] + text_height) // 2
+
+    return cv2.putText(image, text, (x, y), font, font_scale, color, thickness)
 
 
+empty_image = np.zeros((800, 600, 3), np.uint8)
 trackbar = BoundaryTrackbars('main')
-filter_video_viewer(0, image_filter)
+filter_image_viewer(empty_image, image_filter)
