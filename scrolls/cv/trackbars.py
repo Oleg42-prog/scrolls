@@ -90,15 +90,30 @@ class ColorTrackbars:
         return self.get('upper', color)
 
     @property
-    def lower(self):
+    def lowers(self):
         return np.array([self.get_lower(color) for color in self.colors])
 
     @property
-    def upper(self):
+    def uppers(self):
         return np.array([self.get_upper(color) for color in self.colors])
+
+    def get_bounds(self, color):
+        return np.array([self.get('lower', color), self.get('upper', color)])
 
 
 class HSVTrackbars(ColorTrackbars):
 
     def __init__(self, window_name):
         super().__init__(window_name, 'hsv')
+
+    @property
+    def h(self):
+        return self.get_bounds('h')
+
+    @property
+    def s(self):
+        return self.get_bounds('s')
+
+    @property
+    def v(self):
+        return self.get_bounds('v')
