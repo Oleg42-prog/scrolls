@@ -98,7 +98,7 @@ class ColorBoundaryTrackbars:
         return np.array([self.get_upper(color) for color in self.colors])
 
 
-class HSVTrackbar:
+class HSVTrackbars:
 
     def __init__(self, window_name):
         self.window_name = window_name
