@@ -68,7 +68,7 @@ class BoundaryTrackbars:
         return self.upper_trackbar.value
 
 
-class ColorBoundaryTrackbars:
+class ColorTrackbars:
 
     def __init__(self, window_name, colors):
         self.window_name = window_name
