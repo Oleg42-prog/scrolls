@@ -68,6 +68,12 @@ class BoundaryTrackbars:
         return self.upper_trackbar.value
 
 
+class GrayscaleTrackbars(BoundaryTrackbars):
+
+    def __init__(self, window_name):
+        super().__init__(window_name, TrackbarDescription('lower', 0, 255), TrackbarDescription('upper', 0, 255))
+
+
 class ColorTrackbars:
 
     def __init__(self, window_name, colors):
