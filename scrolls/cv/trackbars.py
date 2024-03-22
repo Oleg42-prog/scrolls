@@ -117,3 +117,21 @@ class HSVTrackbars(ColorTrackbars):
     @property
     def v(self):
         return self.get_bounds('v')
+
+
+class RGBTrackbars(ColorTrackbars):
+
+    def __init__(self, window_name):
+        super().__init__(window_name, 'rgb')
+
+    @property
+    def r(self):
+        return self.get_bounds('r')
+
+    @property
+    def g(self):
+        return self.get_bounds('g')
+
+    @property
+    def b(self):
+        return self.get_bounds('b')
