@@ -54,7 +54,7 @@ class BoundaryTrackbars:
         self,
         window_name,
         lower_description=TrackbarDescription('lower', 0, 100),
-        upper_description=TrackbarDescription('upper', 0, 100)
+        upper_description=TrackbarDescription('upper', 100, 100)
     ):
         self.lower_trackbar = Trackbar.from_description(window_name, lower_description)
         self.upper_trackbar = Trackbar.from_description(window_name, upper_description)
