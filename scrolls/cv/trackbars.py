@@ -1,4 +1,3 @@
-from abc import ABC
 from dataclasses import dataclass, asdict
 
 import cv2
@@ -30,9 +29,9 @@ class Trackbar:
         return Trackbar(window_name, **asdict(description))
 
 
-class TrackbarContainer(ABC):
+class TrackbarContainer:
 
-    def __init__(self, window_name, *descriptions):
+    def __init__(self, window_name, descriptions):
         self._container = {}
         self.window_name = window_name
 
@@ -44,8 +43,23 @@ class TrackbarContainer(ABC):
     def __getitem__(self, trackbar_name):
         return self.value(trackbar_name)
 
+    def __getattr__(self, trackbar_name):
+        if trackbar_name in self._container:
+            return self.value(trackbar_name)
+        raise AttributeError(f'No such trackbar: {trackbar_name}')
+
     def value(self, trackbar_name):
         return self._container[trackbar_name].value
+
+
+class UniformTrackbars(TrackbarContainer):
+
+    def __init__(self, window_name, trackbars_names, init_value=0, max_value=100):
+        descriptions = []
+        for trackbar_name in trackbars_names:
+            uniform_description = TrackbarDescription(trackbar_name, init_value, max_value)
+            descriptions.append(uniform_description)
+        super().__init__(window_name, descriptions)
 
 
 class BoundaryTrackbars:
@@ -106,38 +120,19 @@ class ColorTrackbars:
     def get_bounds(self, color):
         return np.array([self.get('lower', color), self.get('upper', color)])
 
+    def __getattr__(self, color):
+        if color in self.colors:
+            return self.get_bounds(color)
+        raise AttributeError(f'No such color: {color}')
+
 
 class HSVTrackbars(ColorTrackbars):
 
     def __init__(self, window_name):
         super().__init__(window_name, 'hsv')
 
-    @property
-    def h(self):
-        return self.get_bounds('h')
-
-    @property
-    def s(self):
-        return self.get_bounds('s')
-
-    @property
-    def v(self):
-        return self.get_bounds('v')
-
 
 class RGBTrackbars(ColorTrackbars):
 
     def __init__(self, window_name):
         super().__init__(window_name, 'rgb')
-
-    @property
-    def r(self):
-        return self.get_bounds('r')
-
-    @property
-    def g(self):
-        return self.get_bounds('g')
-
-    @property
-    def b(self):
-        return self.get_bounds('b')
