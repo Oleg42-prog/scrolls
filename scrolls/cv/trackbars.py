@@ -39,7 +39,7 @@ class TrackbarContainer(ABC):
         cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
         for descr in descriptions:
-            self._container[descr.name] = Trackbar.from_description(window_name, descr)
+            self._container[descr.trackbar_name] = Trackbar.from_description(window_name, descr)
 
     def __getitem__(self, trackbar_name):
         return self.value(trackbar_name)
