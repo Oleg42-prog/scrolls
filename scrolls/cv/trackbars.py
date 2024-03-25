@@ -106,38 +106,19 @@ class ColorTrackbars:
     def get_bounds(self, color):
         return np.array([self.get('lower', color), self.get('upper', color)])
 
+    def __getattr__(self, color):
+        if color in self.colors:
+            return self.get_bounds(color)
+        raise AttributeError(f'No such color: {color}')
+
 
 class HSVTrackbars(ColorTrackbars):
 
     def __init__(self, window_name):
         super().__init__(window_name, 'hsv')
 
-    @property
-    def h(self):
-        return self.get_bounds('h')
-
-    @property
-    def s(self):
-        return self.get_bounds('s')
-
-    @property
-    def v(self):
-        return self.get_bounds('v')
-
 
 class RGBTrackbars(ColorTrackbars):
 
     def __init__(self, window_name):
         super().__init__(window_name, 'rgb')
-
-    @property
-    def r(self):
-        return self.get_bounds('r')
-
-    @property
-    def g(self):
-        return self.get_bounds('g')
-
-    @property
-    def b(self):
-        return self.get_bounds('b')
