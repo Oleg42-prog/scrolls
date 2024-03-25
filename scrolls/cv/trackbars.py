@@ -52,6 +52,16 @@ class TrackbarContainer:
         return self._container[trackbar_name].value
 
 
+class UniformTrackbars(TrackbarContainer):
+
+    def __init__(self, window_name, trackbars_names, init_value=0, max_value=100):
+        descriptions = []
+        for trackbar_name in trackbars_names:
+            uniform_description = TrackbarDescription(trackbar_name, init_value, max_value)
+            descriptions.append(uniform_description)
+        super().__init__(window_name, descriptions)
+
+
 class BoundaryTrackbars:
 
     def __init__(
