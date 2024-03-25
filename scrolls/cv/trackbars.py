@@ -32,7 +32,7 @@ class Trackbar:
 
 class TrackbarContainer:
 
-    def __init__(self, window_name, *descriptions):
+    def __init__(self, window_name, descriptions):
         self._container = {}
         self.window_name = window_name
 
