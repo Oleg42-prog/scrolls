@@ -44,6 +44,11 @@ class TrackbarContainer(ABC):
     def __getitem__(self, trackbar_name):
         return self.value(trackbar_name)
 
+    def __getattr__(self, trackbar_name):
+        if trackbar_name in self._container:
+            return self.value(trackbar_name)
+        raise AttributeError(f'No such trackbar: {trackbar_name}')
+
     def value(self, trackbar_name):
         return self._container[trackbar_name].value
 
