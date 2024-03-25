@@ -9,5 +9,5 @@ def projective_filter(image):
 
 
 _image = cv2.imread('images/lena.png')
-rotations = UniformTrackbars('Projective Filter', ['rx', 'ry', 'rz'], max_value=360)
-filter_image_viewer(_image, projective_filter, 'Projective Filter')
+rotations = UniformTrackbars('Rotations', ['rx', 'ry', 'rz'], max_value=360)
+filter_image_viewer(_image, projective_filter, 'Projective')
