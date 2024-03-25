@@ -30,7 +30,7 @@ class Trackbar:
         return Trackbar(window_name, **asdict(description))
 
 
-class TrackbarContainer(ABC):
+class TrackbarContainer:
 
     def __init__(self, window_name, *descriptions):
         self._container = {}
