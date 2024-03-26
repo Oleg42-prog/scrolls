@@ -36,7 +36,7 @@ def plot_results_of_elbow_method(k_range, distortions):
     plt.show()
 
 
-def elbow_method_with_plot(features, k_range):
-    distortions, inertias = elbow_method(features, k_range)
+def elbow_method_with_plot(features, k_range, n_init='auto', max_iter=300, verbose=False):
+    distortions, inertias = elbow_method(features, k_range, n_init, max_iter, verbose)
     plot_results_of_elbow_method(k_range, distortions)
     return distortions, inertias
