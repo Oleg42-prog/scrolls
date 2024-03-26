@@ -8,5 +8,11 @@ setup(
    author='Oleg Dudnik',
    author_email='Oleggelo86@gmail.com',
    packages=find_packages(include=['scrolls', 'scrolls.*']),
-   install_requires=['opencv-python'],
+   install_requires=[
+      'opencv-python',
+      'scikit-learn',
+      'pillow',
+      'matplotlib',
+      'numpy'
+   ],
 )
