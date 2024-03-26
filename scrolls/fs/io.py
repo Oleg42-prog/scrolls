@@ -3,6 +3,11 @@ import pickle
 import numpy as np
 
 
+def append_to_file(file_path, content, end='\n', encoding='utf-8'):
+    with open(file_path, 'a', encoding=encoding) as file:
+        file.write(content + end)
+
+
 def load_json(file_path, encoding='utf-8'):
     with open(file_path, 'r', encoding=encoding) as fp:
         return json.load(fp)
