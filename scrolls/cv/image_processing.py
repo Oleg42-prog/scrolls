@@ -36,6 +36,10 @@ def invert(image):
     return 255 - image
 
 
+def triple_channel(img):
+    return cv2.merge((img, img, img))
+
+
 def everything_to_pil_image(input_data):
 
     if isinstance(input_data, str):
