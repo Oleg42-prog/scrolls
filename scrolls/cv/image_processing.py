@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from PIL import Image
+from scrolls.geometry.linal import min_max_scaller
 
 
 def compress_twice(img):
@@ -34,6 +35,11 @@ def image_in_range(img, lower, upper):
 
 def invert(image):
     return 255 - image
+
+
+def to_image_255(image):
+    normalized = min_max_scaller(image)
+    return np.uint8(normalized * 255)
 
 
 def triple_channel(img):
