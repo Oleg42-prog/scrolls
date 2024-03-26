@@ -1,4 +1,6 @@
 import cv2
+import numpy as np
+from PIL import Image
 
 
 def compress_twice(img):
@@ -32,3 +34,17 @@ def image_in_range(img, lower, upper):
 
 def invert(image):
     return 255 - image
+
+
+def everything_to_pil_image(input_data):
+
+    if isinstance(input_data, str):
+        return Image.open(input_data)
+
+    if isinstance(input_data, np.ndarray):
+        return Image.fromarray(input_data.astype('uint8'))
+
+    if isinstance(input_data, Image.Image):
+        return input_data
+
+    raise ValueError("Input type not recognized. It should be either a file path, a numpy array, or a PIL Image.")
