@@ -11,11 +11,12 @@ def reduce_dimension(features, n_components=0.95):
     return pca.fit_transform(features)
 
 
-def elbow_method(features, k_range, n_init='auto', max_iter=300):
+def elbow_method(features, k_range, n_init='auto', max_iter=300, verbose=False):
     distortions = []
     inertias = []
 
-    for k in tqdm(k_range):
+    tqdm_disable = not verbose
+    for k in tqdm(k_range, disable=tqdm_disable):
         kmean_model = KMeans(n_clusters=k, n_init=n_init, max_iter=max_iter)
         kmean_model.fit(features)
 
