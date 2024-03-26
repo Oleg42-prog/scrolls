@@ -1,4 +1,5 @@
 import json
+import pickle
 import numpy as np
 
 
@@ -10,3 +11,14 @@ def load_json(file_path, encoding='utf-8'):
 def save_np(file_path, np_array):
     with open(file_path, 'wb') as fp:
         np.save(fp, np_array)
+
+
+def load_pickle(file_path):
+    with open(file_path, 'rb') as file:
+        data = pickle.load(file)
+    return data
+
+
+def save_pickle(data, file_path):
+    with open(file_path, 'wb') as file:
+        pickle.dump(data, file)
