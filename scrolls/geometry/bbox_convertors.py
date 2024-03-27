@@ -18,4 +18,6 @@ def boxes_xyxy_to_xywh(bounding_boxes):
 
 
 def boxes_xyxy_to_xyxyn(bounding_boxes, image_size):
-    pass
+    image_width, image_height = image_size
+    transformation_vector = np.array([image_width, image_height, image_width, image_height])
+    return bounding_boxes / transformation_vector
