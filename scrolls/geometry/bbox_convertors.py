@@ -19,6 +19,8 @@ def box_xyxy_to_xywh(bounding_box):
     return boxes_xyxy_to_xywh(bounding_boxes)
 
 
+# Converts of bounding box representations
+
 def boxes_xyxy_to_xywh(bounding_boxes):
     transformation_matrix = np.array([
         [1, 0, 0, 0],
@@ -77,6 +79,31 @@ def boxes_xyxy_to_cxywh(bounding_boxes):
         [0, -1, 0, 1]
     ])
     return apply_linear_operator(transformation_matrix, bounding_boxes)
+
+
+# Converts of bounding box representations normalised synonyms
+def boxes_xyxyn_to_xywhn(bounding_boxes):
+    return boxes_xyxy_to_xywh(bounding_boxes)
+
+
+def boxes_xywhn_to_xyxyn(bounding_boxes):
+    return boxes_xywh_to_xyxy(bounding_boxes)
+
+
+def boxes_xywhn_to_cxywhn(bounding_boxes):
+    return boxes_xywh_to_cxywh(bounding_boxes)
+
+
+def boxes_cxywhn_to_xywhn(bounding_boxes):
+    return boxes_cxywh_to_xywh(bounding_boxes)
+
+
+def boxes_cxywhn_to_xyxyn(bounding_boxes):
+    return boxes_cxywh_to_xyxy(bounding_boxes)
+
+
+def boxes_xyxyn_to_cxywhn(bounding_boxes):
+    return boxes_xyxy_to_cxywh(bounding_boxes)
 
 
 def boxes_xyxy_to_xyxyn(bounding_boxes, image_size):
