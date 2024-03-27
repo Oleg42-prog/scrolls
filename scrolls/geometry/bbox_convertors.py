@@ -35,3 +35,7 @@ def boxes_xywh_to_xyxy(bounding_boxes):
 
 def boxes_xyxy_to_xyxyn(bounding_boxes, image_size):
     return normalize_bounding_boxes(bounding_boxes, image_size)
+
+
+def boxes_xywh_to_xywhn(bounding_boxes, image_size):
+    return normalize_bounding_boxes(bounding_boxes, image_size)
