@@ -69,6 +69,16 @@ def boxes_cxywh_to_xyxy(bounding_boxes):
     return apply_linear_operator(transformation_matrix, bounding_boxes)
 
 
+def boxes_xyxy_to_cxywh(bounding_boxes):
+    transformation_matrix = np.array([
+        [0.5, 0, 0.5, 0],
+        [0, 0.5, 0.5, 0],
+        [-1, 0, 1, 0],
+        [0, -1, 0, 1]
+    ])
+    return apply_linear_operator(transformation_matrix, bounding_boxes)
+
+
 def boxes_xyxy_to_xyxyn(bounding_boxes, image_size):
     return normalize_bounding_boxes(bounding_boxes, image_size)
 
