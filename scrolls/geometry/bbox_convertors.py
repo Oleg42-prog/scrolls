@@ -55,3 +55,15 @@ def boxes_xywh_to_xywhp(bounding_boxes, image_size):
 
 def boxes_cxywh_to_cxywhp(bounding_boxes, image_size):
     return boxes_cxywh_to_cxywhn(bounding_boxes, image_size) * 100
+
+
+def boxes_xyxyp_to_xyxyn(bounding_boxes):
+    return bounding_boxes / 100
+
+
+def boxes_xywhp_to_xywhn(bounding_boxes):
+    return bounding_boxes / 100
+
+
+def boxes_cxywhp_to_cxywhn(bounding_boxes):
+    return bounding_boxes / 100
