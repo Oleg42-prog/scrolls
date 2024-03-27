@@ -67,3 +67,15 @@ def boxes_xywhp_to_xywhn(bounding_boxes):
 
 def boxes_cxywhp_to_cxywhn(bounding_boxes):
     return bounding_boxes / 100
+
+
+def boxes_xyxyn_to_xyxyp(bounding_boxes):
+    return bounding_boxes * 100
+
+
+def boxes_xywhn_to_xywhp(bounding_boxes):
+    return bounding_boxes * 100
+
+
+def boxes_cxywhn_to_cxywhp(bounding_boxes):
+    return bounding_boxes * 100
