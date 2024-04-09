@@ -6,24 +6,29 @@ from scrolls.geometry.boxes.to_cxywh import xyxy_to_cxywh, xywh_to_cxywh
 
 def xyxy_to_cxywhn(xyxy, image_size):
     xyxyn = xyxy_to_xyxyn(xyxy, image_size)
-    return xyxyn_to_cxywhn(xyxyn)
+    cxywhn = xyxyn_to_cxywhn(xyxyn)
+    return cxywhn
 
 
 def xywh_to_cxywhn(xywh, image_size):
     xywhn = xywh_to_xywhn(xywh, image_size)
-    return xywhn_to_cxywhn(xywhn)
+    cxywhn = xywhn_to_cxywhn(xywhn)
+    return cxywhn
 
 
 def xyxyn_to_cxywhn(xyxyn):
-    return xyxy_to_cxywh(xyxyn)
+    cxywhn = xyxy_to_cxywh(xyxyn)
+    return cxywhn
 
 
 def xywhn_to_cxywhn(xywhn):
-    return xywh_to_cxywh(xywhn)
+    cxywhn = xywh_to_cxywh(xywhn)
+    return cxywhn
 
 
 def cxywh_to_cxywhn(cxywh, image_size):
-    return normalize_bounding_boxes(cxywh, image_size)
+    cxywhn = normalize_bounding_boxes(cxywh, image_size)
+    return cxywhn
 
 
 def cxywhn_to_cxywhn(cxywhn):
@@ -32,13 +37,16 @@ def cxywhn_to_cxywhn(cxywhn):
 
 def xyxyp_to_cxywhn(xyxyp):
     xyxyn = xyxyp_to_xyxyn(xyxyp)
-    return xyxyn_to_cxywhn(xyxyn)
+    cxywhn = xyxyn_to_cxywhn(xyxyn)
+    return cxywhn
 
 
 def xywhp_to_cxywhn(xywhp):
     xywhn = xywhp_to_xywhn(xywhp)
-    return xywhn_to_cxywhn(xywhn)
+    cxywhn = xywhn_to_cxywhn(xywhn)
+    return cxywhn
 
 
 def cxywhp_to_cxywhn(cxywhp):
-    return cxywhp / 100
+    cxywhn = cxywhp / 100
+    return cxywhn

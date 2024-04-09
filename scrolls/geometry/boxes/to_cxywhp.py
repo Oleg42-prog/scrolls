@@ -6,38 +6,47 @@ from scrolls.geometry.boxes.to_cxywhn import cxywh_to_cxywhn
 
 def xyxy_to_cxywhp(xyxy, image_size):
     xyxyp = xyxy_to_xyxyp(xyxy, image_size)
-    return xyxyp_to_cxywhp(xyxyp)
+    cxywhp = xyxyp_to_cxywhp(xyxyp)
+    return cxywhp
 
 
 def xywh_to_cxywhp(xywh, image_size):
     xywhp = xywh_to_xywhp(xywh, image_size)
-    return xywhp_to_cxywhp(xywhp)
+    cxywhp = xywhp_to_cxywhp(xywhp)
+    return cxywhp
 
 
 def xyxyn_to_cxywhp(xyxyn):
     xyxyp = xyxyn_to_xyxyp(xyxyn)
-    return xyxyp_to_cxywhp(xyxyp)
+    cxywhp = xyxyp_to_cxywhp(xyxyp)
+    return cxywhp
 
 
 def xywhn_to_cxywhp(xywhn):
     xywhp = xywhn_to_xywhp(xywhn)
-    return xywhp_to_cxywhp(xywhp)
+    cxywhp = xywhp_to_cxywhp(xywhp)
+    return cxywhp
 
 
 def cxywh_to_cxywhp(cxywh, image_size):
-    return cxywh_to_cxywhn(cxywh, image_size) * 100
+    cxywhn = cxywh_to_cxywhn(cxywh, image_size)
+    cxywhp = cxywhn * 100
+    return cxywhp
 
 
 def cxywhn_to_cxywhp(cxywhn):
-    return cxywhn * 100
+    cxywhp = cxywhn * 100
+    return cxywhp
 
 
 def xyxyp_to_cxywhp(xyxyp):
-    return xyxy_to_cxywh(xyxyp)
+    cxywh = xyxy_to_cxywh(xyxyp)
+    return cxywh
 
 
 def xywhp_to_cxywhp(xywhp):
-    return xywh_to_cxywh(xywhp)
+    cxywhp = xywh_to_cxywh(xywhp)
+    return cxywhp
 
 
 def cxywhp_to_cxywhp(cxywhp):

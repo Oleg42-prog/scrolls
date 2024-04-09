@@ -9,47 +9,55 @@ def xyxy_to_xyxy(xyxy):
 
 
 def xywh_to_xyxy(xywh):
-    return apply_linear_operator([
+    xyxy = apply_linear_operator([
         [1, 0, 0, 0],
         [0, 1, 0, 0],
         [1, 0, 1, 0],
         [0, 1, 0, 1]
     ], xywh)
+    return xyxy
 
 
 def xyxyn_to_xyxy(xyxyn, image_size):
-    return rescale_bounding_boxes(xyxyn, image_size)
+    xyxy = rescale_bounding_boxes(xyxyn, image_size)
+    return xyxy
 
 
 def xywhn_to_xyxy(xywhn, image_size):
     xywh = rescale_bounding_boxes(xywhn, image_size)
-    return xywh_to_xyxy(xywh)
+    xyxy = xywh_to_xyxy(xywh)
+    return xyxy
 
 
 def cxywh_to_xyxy(cxywh):
-    return apply_linear_operator([
+    xyxy = apply_linear_operator([
         [1, 0, -0.5, 0],
         [0, 1, 0, -0.5],
         [1, 0, 0.5, 0],
         [0, 1, 0, 0.5]
     ], cxywh)
+    return xyxy
 
 
 def cxywhn_to_xyxy(cxywhn, image_size):
     cxywh = rescale_bounding_boxes(cxywhn, image_size)
-    return cxywh_to_xyxy(cxywh)
+    xyxy = cxywh_to_xyxy(cxywh)
+    return xyxy
 
 
 def xyxyp_to_xyxy(xyxyp, image_size):
     xyxyn = xyxyp / 100
-    return rescale_bounding_boxes(xyxyn, image_size)
+    xyxy = rescale_bounding_boxes(xyxyn, image_size)
+    return xyxy
 
 
 def xywhp_to_xyxy(xywhp, image_size):
     xywh = xywhp_to_xywh(xywhp, image_size)
-    return xywh_to_xyxy(xywh)
+    xyxy = xywh_to_xyxy(xywh)
+    return xyxy
 
 
 def cxywhp_to_xyxy(cxywhp, image_size):
     cxywh = cxywhp_to_cxywh(cxywhp, image_size)
-    return cxywh_to_xyxy(cxywh)
+    xyxy = cxywh_to_xyxy(cxywh)
+    return xyxy
