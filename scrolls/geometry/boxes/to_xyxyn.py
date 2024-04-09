@@ -37,5 +37,6 @@ def xywhp_to_xyxyn(bounding_boxes):
     return xywhn_to_xyxyn(bounding_boxes_normalized)
 
 
-def cxywhp_to_xyxyn():
-    pass
+def cxywhp_to_xyxyn(bounding_boxes):
+    bounding_boxes_normalized = bounding_boxes / 100
+    return cxywhn_to_xyxyn(bounding_boxes_normalized)
