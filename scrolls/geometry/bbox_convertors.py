@@ -9,31 +9,6 @@ def box_xyxy_to_xywh(bounding_box):
     return boxes_xyxy_to_xywh(bounding_boxes)
 
 
-# Converts of bounding box representations percentage synonyms
-def boxes_xyxyp_to_xywhp(bounding_boxes):
-    return boxes_xyxy_to_xywh(bounding_boxes)
-
-
-def boxes_xywhp_to_xyxyp(bounding_boxes):
-    return boxes_xywh_to_xyxy(bounding_boxes)
-
-
-def boxes_xywhp_to_cxywhp(bounding_boxes):
-    return boxes_xywh_to_cxywh(bounding_boxes)
-
-
-def boxes_cxywhp_to_xywhp(bounding_boxes):
-    return boxes_cxywh_to_xywh(bounding_boxes)
-
-
-def boxes_cxywhp_to_xyxyp(bounding_boxes):
-    return boxes_cxywh_to_xyxy(bounding_boxes)
-
-
-def boxes_xyxyp_to_cxywhp(bounding_boxes):
-    return boxes_xyxy_to_cxywh(bounding_boxes)
-
-
 # To normalized
 
 def boxes_xyxy_to_xyxyn(bounding_boxes, image_size):
