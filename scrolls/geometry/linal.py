@@ -25,6 +25,7 @@ def apply_linear_operator(linear_operator, vectors):
     Returns:
     np.ndarray: The result of applying the linear operator to each vector, represented as a matrix.
     """
+    linear_operator = np.array(linear_operator)
     return vectors @ linear_operator.T
 
 
