@@ -1,19 +1,7 @@
-import numpy as np
+from scrolls.geometry.boxes.transforms import normalize_bounding_boxes, rescale_bounding_boxes
 from scrolls.geometry.boxes.to_xyxy import xywh_to_xyxy as boxes_xywh_to_xyxy, cxywh_to_xyxy as boxes_cxywh_to_xyxy
 from scrolls.geometry.boxes.to_xywh import xyxy_to_xywh as boxes_xyxy_to_xywh, cxywh_to_xywh as boxes_cxywh_to_xywh
 from scrolls.geometry.boxes.to_cxywh import xywh_to_cxywh as boxes_xywh_to_cxywh, xyxy_to_cxywh as boxes_xyxy_to_cxywh
-
-
-def normalize_bounding_boxes(bounding_boxes, image_size):
-    image_width, image_height = image_size
-    transformation_vector = np.array([image_width, image_height, image_width, image_height])
-    return bounding_boxes / transformation_vector
-
-
-def rescale_bounding_boxes(bounding_boxes, image_size):
-    image_width, image_height = image_size
-    transformation_vector = np.array([image_width, image_height, image_width, image_height])
-    return bounding_boxes * transformation_vector
 
 
 def box_xyxy_to_xywh(bounding_box):
