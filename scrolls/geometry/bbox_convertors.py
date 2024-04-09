@@ -188,17 +188,3 @@ def boxes_xywhp_to_xywh(bounding_boxes, image_size):
 def boxes_cxywhp_to_cxywh(bounding_boxes, image_size):
     bounding_boxes_normalized = bounding_boxes / 100
     return rescale_bounding_boxes(bounding_boxes_normalized, image_size)
-
-
-# Percentage to normalized
-
-def boxes_xyxyp_to_xyxyn(bounding_boxes):
-    return bounding_boxes / 100
-
-
-def boxes_xywhp_to_xywhn(bounding_boxes):
-    return bounding_boxes / 100
-
-
-def boxes_cxywhp_to_cxywhn(bounding_boxes):
-    return bounding_boxes / 100
