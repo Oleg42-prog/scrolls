@@ -10,8 +10,8 @@ def xyxyn_to_xywhp():
     pass
 
 
-def xywhn_to_xywhp():
-    pass
+def xywhn_to_xywhp(bounding_boxes):
+    return bounding_boxes * 100
 
 
 def cxywh_to_xywhp():
