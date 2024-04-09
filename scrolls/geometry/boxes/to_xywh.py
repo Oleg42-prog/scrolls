@@ -1,5 +1,15 @@
-def xyxy_to_xywh():
-    pass
+import numpy as np
+from scrolls.geometry.linal import apply_linear_operator
+
+
+def xyxy_to_xywh(bounding_boxes):
+    transformation_matrix = np.array([
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [-1, 0, 1, 0],
+        [0, -1, 0, 1]
+    ])
+    return apply_linear_operator(transformation_matrix, bounding_boxes)
 
 
 def xywh_to_xywh(bounding_boxes):
@@ -14,8 +24,14 @@ def xywhn_to_xywh():
     pass
 
 
-def cxywh_to_xywh():
-    pass
+def cxywh_to_xywh(bounding_boxes):
+    transformation_matrix = np.array([
+        [1, 0, -0.5, 0],
+        [0, 1, 0, -0.5],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1]
+    ])
+    return apply_linear_operator(transformation_matrix, bounding_boxes)
 
 
 def cxywhn_to_xywh():
