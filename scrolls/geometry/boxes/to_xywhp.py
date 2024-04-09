@@ -1,12 +1,13 @@
 from scrolls.geometry.boxes.to_xywh import xyxy_to_xywh, cxywh_to_xywh
+from scrolls.geometry.boxes.to_xywhn import xywh_to_xywhn
 
 
 def xyxy_to_xywhp():
     pass
 
 
-def xywh_to_xywhp():
-    pass
+def xywh_to_xywhp(bounding_boxes, image_size):
+    return xywh_to_xywhn(bounding_boxes, image_size) * 100
 
 
 def xyxyn_to_xywhp():

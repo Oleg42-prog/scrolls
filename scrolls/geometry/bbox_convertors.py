@@ -9,20 +9,6 @@ def box_xyxy_to_xywh(bounding_box):
     return boxes_xyxy_to_xywh(bounding_boxes)
 
 
-# To percentage
-
-def boxes_xyxy_to_xyxyp(bounding_boxes, image_size):
-    return boxes_xyxy_to_xyxyn(bounding_boxes, image_size) * 100
-
-
-def boxes_xywh_to_xywhp(bounding_boxes, image_size):
-    return boxes_xywh_to_xywhn(bounding_boxes, image_size) * 100
-
-
-def boxes_cxywh_to_cxywhp(bounding_boxes, image_size):
-    return boxes_cxywh_to_cxywhn(bounding_boxes, image_size) * 100
-
-
 # From percentage
 
 def boxes_xyxyp_to_xyxy(bounding_boxes, image_size):
