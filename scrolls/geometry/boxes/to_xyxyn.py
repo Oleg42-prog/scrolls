@@ -6,8 +6,9 @@ def xyxy_to_xyxyn(bounding_boxes, image_size):
     return normalize_bounding_boxes(bounding_boxes, image_size)
 
 
-def xywh_to_xyxyn():
-    pass
+def xywh_to_xyxyn(bounding_boxes, image_size):
+    bounding_boxes_normalized = normalize_bounding_boxes(bounding_boxes, image_size)
+    return xywhn_to_xyxyn(bounding_boxes_normalized)
 
 
 def xyxyn_to_xyxyn(bounding_boxes):
