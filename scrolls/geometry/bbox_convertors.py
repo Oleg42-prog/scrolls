@@ -9,20 +9,6 @@ def box_xyxy_to_xywh(bounding_box):
     return boxes_xyxy_to_xywh(bounding_boxes)
 
 
-# From normalized
-
-def boxes_xyxyn_to_xyxy(bounding_boxes, image_size):
-    return rescale_bounding_boxes(bounding_boxes, image_size)
-
-
-def boxes_xywhn_to_xywh(bounding_boxes, image_size):
-    return rescale_bounding_boxes(bounding_boxes, image_size)
-
-
-def boxes_cxywhn_to_cxywh(bounding_boxes, image_size):
-    return rescale_bounding_boxes(bounding_boxes, image_size)
-
-
 # To percentage
 
 def boxes_xyxy_to_xyxyp(bounding_boxes, image_size):
