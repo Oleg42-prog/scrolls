@@ -27,8 +27,9 @@ def cxywh_to_xywhp(bounding_boxes, image_size):
     return cxywhp_to_xywhp(cxywhp)
 
 
-def cxywhn_to_xywhp():
-    pass
+def cxywhn_to_xywhp(bounding_boxes):
+    cxywhp = bounding_boxes * 100
+    return cxywhp_to_xywhp(cxywhp)
 
 
 def xyxyp_to_xywhp(bounding_boxes):
