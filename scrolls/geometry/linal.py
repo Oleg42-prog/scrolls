@@ -26,3 +26,8 @@ def apply_linear_operator(linear_operator, vectors):
     np.ndarray: The result of applying the linear operator to each vector, represented as a matrix.
     """
     return vectors @ linear_operator.T
+
+
+def carry_apply_linear_operator(linear_operator):
+    transform_matrix = np.array(linear_operator)
+    return lambda vectors: apply_linear_operator(transform_matrix, vectors)
