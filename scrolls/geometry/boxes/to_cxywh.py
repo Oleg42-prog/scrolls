@@ -1,10 +1,8 @@
 import numpy as np
 from scrolls.geometry.linal import apply_linear_operator
 from scrolls.geometry.boxes.transforms import rescale_bounding_boxes
-from scrolls.geometry.boxes.to_xyxy import xyxyn_to_xyxy
-from scrolls.geometry.boxes.to_xywh import xywhn_to_xywh
-from scrolls.geometry.boxes.to_xyxy import xyxyp_to_xyxy
-from scrolls.geometry.boxes.to_xywh import xywhp_to_xywh
+from scrolls.geometry.boxes.to_xyxy import xyxyn_to_xyxy, xyxyp_to_xyxy
+from scrolls.geometry.boxes.to_xywh import xywhn_to_xywh, xywhp_to_xywh
 
 
 def xyxy_to_cxywh(bounding_boxes):
