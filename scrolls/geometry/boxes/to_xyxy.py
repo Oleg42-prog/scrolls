@@ -36,8 +36,9 @@ def cxywh_to_xyxy(bounding_boxes):
     return apply_linear_operator(transformation_matrix, bounding_boxes)
 
 
-def cxywhn_to_xyxy():
-    pass
+def cxywhn_to_xyxy(bounding_boxes, image_size):
+    cxywh = rescale_bounding_boxes(bounding_boxes, image_size)
+    return cxywh_to_xyxy(cxywh)
 
 
 def xyxyp_to_xyxy(bounding_boxes, image_size):
