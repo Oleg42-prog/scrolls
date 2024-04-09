@@ -19,8 +19,9 @@ def xywhn_to_xyxyn(bounding_boxes):
     return xywh_to_xyxy(bounding_boxes)
 
 
-def cxywh_to_xyxyn():
-    pass
+def cxywh_to_xyxyn(bounding_boxes, image_size):
+    bounding_boxes_normalized = normalize_bounding_boxes(bounding_boxes, image_size)
+    return cxywhn_to_xyxyn(bounding_boxes_normalized)
 
 
 def cxywhn_to_xyxyn(bounding_boxes):
