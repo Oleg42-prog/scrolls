@@ -3,6 +3,7 @@ from scrolls.geometry.linal import apply_linear_operator
 from scrolls.geometry.boxes.transforms import rescale_bounding_boxes
 from scrolls.geometry.boxes.to_xyxy import xyxyn_to_xyxy
 from scrolls.geometry.boxes.to_cxywh import cxywhn_to_cxywh
+from scrolls.geometry.boxes.to_xyxy import xyxyp_to_xyxy
 
 
 def xyxy_to_xywh(bounding_boxes):
@@ -43,8 +44,9 @@ def cxywhn_to_xywh(bounding_boxes, image_size):
     return cxywh_to_xywh(cxywh)
 
 
-def xyxyp_to_xywh():
-    pass
+def xyxyp_to_xywh(bouding_boxes, image_size):
+    xyxy = xyxyp_to_xyxy(bouding_boxes, image_size)
+    return xyxy_to_xywh(xyxy)
 
 
 def xywhp_to_xywh(bounding_boxes, image_size):
