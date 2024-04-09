@@ -47,5 +47,6 @@ def xywhp_to_cxywh():
     pass
 
 
-def cxywhp_to_cxywh():
-    pass
+def cxywhp_to_cxywh(bounding_boxes, image_size):
+    bounding_boxes_normalized = bounding_boxes / 100
+    return rescale_bounding_boxes(bounding_boxes_normalized, image_size)

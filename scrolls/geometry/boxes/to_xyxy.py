@@ -39,8 +39,9 @@ def cxywhn_to_xyxy():
     pass
 
 
-def xyxyp_to_xyxy():
-    pass
+def xyxyp_to_xyxy(bounding_boxes, image_size):
+    bounding_boxes_normalized = bounding_boxes / 100
+    return rescale_bounding_boxes(bounding_boxes_normalized, image_size)
 
 
 def xywhp_to_xyxy():
