@@ -30,5 +30,5 @@ def xywhp_to_cxywhp():
     pass
 
 
-def cxywhp_to_cxywhp():
-    pass
+def cxywhp_to_cxywhp(bounding_boxes):
+    return bounding_boxes

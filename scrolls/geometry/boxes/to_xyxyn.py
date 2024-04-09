@@ -6,8 +6,8 @@ def xywh_to_xyxyn():
     pass
 
 
-def xyxyn_to_xyxyn():
-    pass
+def xyxyn_to_xyxyn(bounding_boxes):
+    return bounding_boxes
 
 
 def xywhn_to_xyxyn():

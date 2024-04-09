@@ -22,8 +22,8 @@ def cxywhn_to_xyxyp():
     pass
 
 
-def xyxyp_to_xyxyp():
-    pass
+def xyxyp_to_xyxyp(bounding_boxes):
+    return bounding_boxes
 
 
 def xywhp_to_xyxyp():

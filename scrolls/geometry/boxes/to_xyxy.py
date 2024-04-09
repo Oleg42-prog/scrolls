@@ -1,5 +1,5 @@
-def xyxy_to_xyxy():
-    pass
+def xyxy_to_xyxy(bounding_boxes):
+    return bounding_boxes
 
 
 def xywh_to_xyxy():
