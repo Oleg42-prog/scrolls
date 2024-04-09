@@ -21,8 +21,9 @@ def xyxyn_to_xyxy(bounding_boxes, image_size):
     return rescale_bounding_boxes(bounding_boxes, image_size)
 
 
-def xywhn_to_xyxy():
-    pass
+def xywhn_to_xyxy(bounding_boxes, image_size):
+    xywh = rescale_bounding_boxes(bounding_boxes, image_size)
+    return xywh_to_xyxy(xywh)
 
 
 def cxywh_to_xyxy(bounding_boxes):
