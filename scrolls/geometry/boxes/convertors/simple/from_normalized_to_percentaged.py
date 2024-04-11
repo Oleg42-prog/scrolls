@@ -1,13 +1,16 @@
+from scrolls.geometry.boxes.convertors import coordinate_systems
+
+
 def xyxyn_to_xyxyp(xyxyn):
-    xyxyp = xyxyn * 100
+    xyxyp = coordinate_systems.normalized_to_percentaged(xyxyn)
     return xyxyp
 
 
 def xywhn_to_xywhp(xywhn):
-    xywhp = xywhn * 100
+    xywhp = coordinate_systems.normalized_to_percentaged(xywhn)
     return xywhp
 
 
 def cxywhn_to_cxywhp(cxywhn):
-    cxywhp = cxywhn * 100
+    cxywhp = coordinate_systems.normalized_to_percentaged(cxywhn)
     return cxywhp

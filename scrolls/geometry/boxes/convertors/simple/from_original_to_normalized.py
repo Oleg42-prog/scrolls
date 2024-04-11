@@ -1,16 +1,16 @@
-from scrolls.geometry.boxes.transforms import normalize_bounding_boxes
+from scrolls.geometry.boxes.convertors import coordinate_systems
 
 
 def xyxy_to_xyxyn(xyxy, original_size):
-    xyxyn = normalize_bounding_boxes(xyxy, original_size)
+    xyxyn = coordinate_systems.original_to_normalized(xyxy, original_size)
     return xyxyn
 
 
 def xywh_to_xywhn(xywh, original_size):
-    xywhn = normalize_bounding_boxes(xywh, original_size)
+    xywhn = coordinate_systems.original_to_normalized(xywh, original_size)
     return xywhn
 
 
 def cxywh_to_cxywhn(cxywh, original_size):
-    cxywhn = normalize_bounding_boxes(cxywh, original_size)
+    cxywhn = coordinate_systems.original_to_normalized(cxywh, original_size)
     return cxywhn
