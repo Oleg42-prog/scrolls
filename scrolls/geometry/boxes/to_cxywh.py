@@ -20,11 +20,7 @@ def xywhn_to_cxywh(xywhn, image_size):
 
 
 from scrolls.geometry.boxes.convertors.identity import cxywh_to_cxywh
-
-
-def cxywhn_to_cxywh(cxywhn, image_size):
-    cxywh = rescale_bounding_boxes(cxywhn, image_size)
-    return cxywh
+from scrolls.geometry.boxes.convertors.from_normalised import cxywhn_to_cxywh
 
 
 def xyxyp_to_cxywh(xyxyp, image_size):
