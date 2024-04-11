@@ -1,5 +1,4 @@
 from scrolls.geometry.boxes.to_xyxyp import xyxy_to_xyxyp, xyxyn_to_xyxyp
-from scrolls.geometry.boxes.to_xywhn import xywh_to_xywhn
 from scrolls.geometry.boxes.to_cxywhp import cxywh_to_cxywhp
 
 
@@ -9,10 +8,7 @@ def xyxy_to_xywhp(xyxy, image_size):
     return xywhp
 
 
-def xywh_to_xywhp(xywh, image_size):
-    xywhn = xywh_to_xywhn(xywh, image_size)
-    xywhp = xywhn * 100
-    return xywhp
+from scrolls.geometry.boxes.convertors.to_percentaged import xywh_to_xywhp
 
 
 def xyxyn_to_xywhp(xyxyn):
@@ -21,9 +17,7 @@ def xyxyn_to_xywhp(xyxyn):
     return xywhp
 
 
-def xywhn_to_xywhp(xywhn):
-    xywhp = xywhn * 100
-    return xywhp
+from scrolls.geometry.boxes.convertors.to_percentaged import xywhn_to_xywhp
 
 
 def cxywh_to_xywhp(cxywh, image_size):
