@@ -1,27 +1,10 @@
-from scrolls.geometry.linal import apply_linear_operator
 from scrolls.geometry.boxes.transforms import rescale_bounding_boxes
 from scrolls.geometry.boxes.to_xyxy import xyxyn_to_xyxy, xyxyp_to_xyxy
 from scrolls.geometry.boxes.to_xywh import xywhn_to_xywh, xywhp_to_xywh
 
 
-def xyxy_to_cxywh(xyxy):
-    cxywh = apply_linear_operator([
-        [0.5, 0, 0.5, 0],
-        [0, 0.5, 0.5, 0],
-        [-1, 0, 1, 0],
-        [0, -1, 0, 1]
-    ], xyxy)
-    return cxywh
-
-
-def xywh_to_cxywh(xywh):
-    cxywh = apply_linear_operator([
-        [1, 0, 0.5, 0],
-        [0, 1, 0, 0.5],
-        [0, 0, 1, 0],
-        [0, 0, 0, 1]
-    ], xywh)
-    return cxywh
+from scrolls.geometry.boxes.convertors.representation import xyxy_to_cxywh
+from scrolls.geometry.boxes.convertors.representation import xywh_to_cxywh
 
 
 def xyxyn_to_cxywh(xyxyn, image_size):
