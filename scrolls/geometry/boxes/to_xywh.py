@@ -5,7 +5,7 @@ from scrolls.geometry.boxes.convertors.simple import xywhn_to_xywh
 from scrolls.geometry.boxes.convertors.representation import cxywh_to_xywh
 from scrolls.geometry.boxes.convertors.complicated import cxywhn_to_xywh
 from scrolls.geometry.boxes.convertors.complicated import xyxyp_to_xywh
-from scrolls.geometry.boxes.convertors.simple.from_percentaged_to_image import xywhp_to_xywh
+from scrolls.geometry.boxes.convertors.simple import xywhp_to_xywh
 from scrolls.geometry.boxes.convertors.complicated import cxywhp_to_xywh
 
 

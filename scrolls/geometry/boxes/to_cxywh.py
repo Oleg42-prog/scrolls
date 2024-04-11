@@ -6,7 +6,7 @@ from scrolls.geometry.boxes.convertors.identity import cxywh_to_cxywh
 from scrolls.geometry.boxes.convertors.simple import cxywhn_to_cxywh
 from scrolls.geometry.boxes.convertors.complicated import xyxyp_to_cxywh
 from scrolls.geometry.boxes.convertors.complicated import xywhp_to_cxywh
-from scrolls.geometry.boxes.convertors.simple.from_percentaged_to_image import cxywhp_to_cxywh
+from scrolls.geometry.boxes.convertors.simple import cxywhp_to_cxywh
 
 __all__ = [
     'xyxy_to_cxywh',

@@ -1,9 +1,9 @@
 from scrolls.geometry.boxes.convertors.simple import xyxyn_to_xyxyp, xywhn_to_xywhp
-from scrolls.geometry.boxes.convertors.synonyms.normalised import xywhn_to_xyxyn
-from scrolls.geometry.boxes.convertors.synonyms.normalised import cxywhn_to_xyxyn
-from scrolls.geometry.boxes.convertors.synonyms.percentaged import xyxyp_to_xywhp, xyxyp_to_cxywhp
-from scrolls.geometry.boxes.convertors.synonyms.percentaged import xywhp_to_cxywhp
-from scrolls.geometry.boxes.convertors.synonyms.percentaged import cxywhp_to_xywhp
+from scrolls.geometry.boxes.convertors.synonyms import xywhn_to_xyxyn
+from scrolls.geometry.boxes.convertors.synonyms import cxywhn_to_xyxyn
+from scrolls.geometry.boxes.convertors.synonyms import xyxyp_to_xywhp, xyxyp_to_cxywhp
+from scrolls.geometry.boxes.convertors.synonyms import xywhp_to_cxywhp
+from scrolls.geometry.boxes.convertors.synonyms import cxywhp_to_xywhp
 
 
 def xyxyn_to_xywhp(xyxyn):
