@@ -1,10 +1,10 @@
 from scrolls.geometry.boxes.convertors.identity import xyxy_to_xyxy
 from scrolls.geometry.boxes.convertors.representation import xywh_to_xyxy
-from scrolls.geometry.boxes.convertors.from_normalised import xyxyn_to_xyxy
+from scrolls.geometry.boxes.convertors.simple import xyxyn_to_xyxy
 from scrolls.geometry.boxes.convertors.complicated import xywhn_to_xyxy
 from scrolls.geometry.boxes.convertors.representation import cxywh_to_xyxy
 from scrolls.geometry.boxes.convertors.complicated import cxywhn_to_xyxy
-from scrolls.geometry.boxes.convertors.from_percentaged import xyxyp_to_xyxy
+from scrolls.geometry.boxes.convertors.simple import xyxyp_to_xyxy
 from scrolls.geometry.boxes.convertors.complicated import xywhp_to_xyxy
 from scrolls.geometry.boxes.convertors.complicated import cxywhp_to_xyxy
 

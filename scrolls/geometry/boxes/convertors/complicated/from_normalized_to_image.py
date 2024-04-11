@@ -1,5 +1,5 @@
 from scrolls.geometry.boxes.transforms import rescale_bounding_boxes
-from scrolls.geometry.boxes.convertors.from_normalised import cxywhn_to_cxywh, xywhn_to_xywh, xyxyn_to_xyxy
+from scrolls.geometry.boxes.convertors.simple import cxywhn_to_cxywh, xywhn_to_xywh, xyxyn_to_xyxy
 from scrolls.geometry.boxes.convertors.representation import xyxy_to_xywh, xyxy_to_cxywh
 from scrolls.geometry.boxes.convertors.representation import xywh_to_xyxy, xywh_to_cxywh
 from scrolls.geometry.boxes.convertors.representation import cxywh_to_xyxy, cxywh_to_xywh

@@ -1,4 +1,4 @@
-from scrolls.geometry.boxes.convertors.to_percentaged import xyxyn_to_xyxyp, xywhn_to_xywhp
+from scrolls.geometry.boxes.convertors.simple import xyxyn_to_xyxyp, xywhn_to_xywhp
 from scrolls.geometry.boxes.convertors.synonyms.normalised import xywhn_to_xyxyn
 from scrolls.geometry.boxes.convertors.synonyms.normalised import cxywhn_to_xyxyn
 from scrolls.geometry.boxes.convertors.synonyms.percentaged import xyxyp_to_xywhp, xyxyp_to_cxywhp

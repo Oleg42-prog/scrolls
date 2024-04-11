@@ -1,5 +1,5 @@
 from scrolls.geometry.boxes.transforms import normalize_bounding_boxes
-from scrolls.geometry.boxes.convertors.to_normalised import xyxy_to_xyxyn, xywh_to_xywhn, cxywh_to_cxywhn
+from scrolls.geometry.boxes.convertors.simple import xyxy_to_xyxyn, xywh_to_xywhn, cxywh_to_cxywhn
 from scrolls.geometry.boxes.convertors.synonyms.normalised import xyxyn_to_xywhn, xyxyn_to_cxywhn
 from scrolls.geometry.boxes.convertors.synonyms.normalised import xywhn_to_xyxyn, xywhn_to_cxywhn
 from scrolls.geometry.boxes.convertors.synonyms.normalised import cxywhn_to_xyxyn, cxywhn_to_xywhn
