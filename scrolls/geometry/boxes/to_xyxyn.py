@@ -13,8 +13,7 @@ def xywh_to_xyxyn(xywh, image_size):
     return xyxyn
 
 
-def xyxyn_to_xyxyn(xyxyn):
-    return xyxyn
+from scrolls.geometry.boxes.convertors.identity import xyxyn_to_xyxyn
 
 
 def xywhn_to_xyxyn(xywhn):

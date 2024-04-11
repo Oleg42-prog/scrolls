@@ -36,8 +36,7 @@ def xywhn_to_cxywh(xywhn, image_size):
     return cxywh
 
 
-def cxywh_to_cxywh(cxywh):
-    return cxywh
+from scrolls.geometry.boxes.convertors.identity import cxywh_to_cxywh
 
 
 def cxywhn_to_cxywh(cxywhn, image_size):

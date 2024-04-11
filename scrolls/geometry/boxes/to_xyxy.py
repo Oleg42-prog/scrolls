@@ -4,8 +4,7 @@ from scrolls.geometry.boxes.to_xywh import xywhp_to_xywh
 from scrolls.geometry.boxes.to_cxywh import cxywhp_to_cxywh
 
 
-def xyxy_to_xyxy(xyxy):
-    return xyxy
+from scrolls.geometry.boxes.convertors.identity import xyxy_to_xyxy
 
 
 def xywh_to_xyxy(xywh):

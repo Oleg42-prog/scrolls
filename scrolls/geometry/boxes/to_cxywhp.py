@@ -49,5 +49,4 @@ def xywhp_to_cxywhp(xywhp):
     return cxywhp
 
 
-def cxywhp_to_cxywhp(cxywhp):
-    return cxywhp
+from scrolls.geometry.boxes.convertors.identity import cxywhp_to_cxywhp

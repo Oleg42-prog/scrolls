@@ -37,8 +37,7 @@ def cxywhn_to_xyxyp(cxywhn):
     return xyxyp
 
 
-def xyxyp_to_xyxyp(xyxyp):
-    return xyxyp
+from scrolls.geometry.boxes.convertors.identity import xyxyp_to_xyxyp
 
 
 def xywhp_to_xyxyp(xywhp):
