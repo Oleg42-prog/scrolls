@@ -17,7 +17,7 @@ def xyxyp_to_cxywhn(xyxyp):
 
 
 def xywhp_to_xyxyn(xywhp):
-    xywhn = xywhp / 100
+    xywhn = xywhp_to_xywhn(xywhp)
     xyxyn = xywhn_to_xyxyn(xywhn)
     return xyxyn
 
@@ -29,7 +29,7 @@ def xywhp_to_cxywhn(xywhp):
 
 
 def cxywhp_to_xyxyn(cxywhp):
-    cxywhn = cxywhp / 100
+    cxywhn = cxywhp_to_cxywhn(cxywhp)
     xyxyn = cxywhn_to_xyxyn(cxywhn)
     return xyxyn
 
