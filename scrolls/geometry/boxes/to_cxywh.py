@@ -34,8 +34,4 @@ def xywhp_to_cxywh(xywhp, image_size):
     cxywh = xywh_to_cxywh(xywh)
     return cxywh
 
-
-def cxywhp_to_cxywh(cxywhp, image_size):
-    cxywhn = cxywhp / 100
-    cxywh = rescale_bounding_boxes(cxywhn, image_size)
-    return cxywh
+from scrolls.geometry.boxes.convertors.from_percentaged import cxywhp_to_cxywh

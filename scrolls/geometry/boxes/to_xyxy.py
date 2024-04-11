@@ -23,10 +23,7 @@ def cxywhn_to_xyxy(cxywhn, image_size):
     return xyxy
 
 
-def xyxyp_to_xyxy(xyxyp, image_size):
-    xyxyn = xyxyp / 100
-    xyxy = rescale_bounding_boxes(xyxyn, image_size)
-    return xyxy
+from scrolls.geometry.boxes.convertors.from_percentaged import xyxyp_to_xyxy
 
 
 def xywhp_to_xyxy(xywhp, image_size):
