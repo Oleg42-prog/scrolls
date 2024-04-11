@@ -1,6 +1,5 @@
 from scrolls.geometry.boxes.to_xyxyp import xyxy_to_xyxyp, xyxyn_to_xyxyp
 from scrolls.geometry.boxes.to_xywhp import xywh_to_xywhp, xywhn_to_xywhp
-from scrolls.geometry.boxes.to_cxywh import xyxy_to_cxywh, xywh_to_cxywh
 from scrolls.geometry.boxes.to_cxywhn import cxywh_to_cxywhn
 
 
@@ -39,14 +38,6 @@ def cxywhn_to_cxywhp(cxywhn):
     return cxywhp
 
 
-def xyxyp_to_cxywhp(xyxyp):
-    cxywh = xyxy_to_cxywh(xyxyp)
-    return cxywh
-
-
-def xywhp_to_cxywhp(xywhp):
-    cxywhp = xywh_to_cxywh(xywhp)
-    return cxywhp
-
-
+from scrolls.geometry.boxes.convertors.synonyms import xyxyp_to_cxywhp
+from scrolls.geometry.boxes.convertors.synonyms import xywhp_to_cxywhp
 from scrolls.geometry.boxes.convertors.identity import cxywhp_to_cxywhp

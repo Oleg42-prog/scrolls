@@ -1,6 +1,5 @@
 from scrolls.geometry.boxes.transforms import normalize_bounding_boxes
 from scrolls.geometry.boxes.to_xyxyn import xyxy_to_xyxyn, xyxyp_to_xyxyn
-from scrolls.geometry.boxes.to_xywh import xyxy_to_xywh, cxywh_to_xywh
 from scrolls.geometry.boxes.to_cxywhn import cxywh_to_cxywhn, cxywhp_to_cxywhn
 
 
@@ -15,13 +14,8 @@ def xywh_to_xywhn(xywh, image_size):
     return xywhn
 
 
-def xyxyn_to_xywhn(xyxyn):
-    xywhn = xyxy_to_xywh(xyxyn)
-    return xywhn
-
-
+from scrolls.geometry.boxes.convertors.synonyms import xyxyn_to_xywhn
 from scrolls.geometry.boxes.convertors.identity import xywhn_to_xywhn
-
 
 
 def cxywh_to_xywhn(cxywh, image_size):
@@ -30,9 +24,7 @@ def cxywh_to_xywhn(cxywh, image_size):
     return xywhn
 
 
-def cxywhn_to_xywhn(cxywhn):
-    xywhn = cxywh_to_xywh(cxywhn)
-    return xywhn
+from scrolls.geometry.boxes.convertors.synonyms import cxywhn_to_xywhn
 
 
 def xyxyp_to_xywhn(xyxyp):
