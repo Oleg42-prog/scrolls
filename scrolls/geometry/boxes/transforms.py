@@ -1,13 +1,13 @@
 import numpy as np
 
 
-def normalize_bounding_boxes(bounding_boxes, image_size):
-    image_width, image_height = image_size
-    transformation_vector = np.array([image_width, image_height, image_width, image_height])
+def normalize_bounding_boxes(bounding_boxes, original_size):
+    original_width, original_height = original_size
+    transformation_vector = np.array([original_width, original_height, original_width, original_height])
     return bounding_boxes / transformation_vector
 
 
-def rescale_bounding_boxes(bounding_boxes, image_size):
-    image_width, image_height = image_size
-    transformation_vector = np.array([image_width, image_height, image_width, image_height])
+def rescale_bounding_boxes(bounding_boxes, original_size):
+    original_width, original_height = original_size
+    transformation_vector = np.array([original_width, original_height, original_width, original_height])
     return bounding_boxes * transformation_vector

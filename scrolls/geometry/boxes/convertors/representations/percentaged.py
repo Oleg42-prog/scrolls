@@ -1,6 +1,6 @@
-from scrolls.geometry.boxes.convertors.representations.image import xyxy_to_xywh, xyxy_to_cxywh
-from scrolls.geometry.boxes.convertors.representations.image import xywh_to_xyxy, xywh_to_cxywh
-from scrolls.geometry.boxes.convertors.representations.image import cxywh_to_xyxy, cxywh_to_xywh
+from scrolls.geometry.boxes.convertors.representations.original import xyxy_to_xywh, xyxy_to_cxywh
+from scrolls.geometry.boxes.convertors.representations.original import xywh_to_xyxy, xywh_to_cxywh
+from scrolls.geometry.boxes.convertors.representations.original import cxywh_to_xyxy, cxywh_to_xywh
 
 
 def xyxyp_to_xywhp(xyxyp):
