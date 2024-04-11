@@ -1,7 +1,7 @@
 from scrolls.geometry.boxes.convertors.simple import xyxy_to_xyxyp, xywh_to_xywhp, cxywh_to_cxywhp
-from scrolls.geometry.boxes.convertors.synonyms import xyxyp_to_xywhp, xyxyp_to_cxywhp
-from scrolls.geometry.boxes.convertors.synonyms import xywhp_to_cxywhp
-from scrolls.geometry.boxes.convertors.synonyms import cxywhp_to_xywhp
+from scrolls.geometry.boxes.convertors.representations import xyxyp_to_xywhp, xyxyp_to_cxywhp
+from scrolls.geometry.boxes.convertors.representations import xywhp_to_cxywhp
+from scrolls.geometry.boxes.convertors.representations import cxywhp_to_xywhp
 from scrolls.geometry.boxes.convertors.complicated.from_image_to_normalized import xywh_to_xyxyn, cxywh_to_xyxyn
 
 

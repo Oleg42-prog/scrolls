@@ -1,5 +1,5 @@
-from scrolls.geometry.boxes.convertors.representation import xyxy_to_cxywh
-from scrolls.geometry.boxes.convertors.representation import xywh_to_cxywh
+from scrolls.geometry.boxes.convertors.representations import xyxy_to_cxywh
+from scrolls.geometry.boxes.convertors.representations import xywh_to_cxywh
 from scrolls.geometry.boxes.convertors.complicated import xyxyn_to_cxywh
 from scrolls.geometry.boxes.convertors.complicated import xywhn_to_cxywh
 from scrolls.geometry.boxes.convertors.identity import cxywh_to_cxywh

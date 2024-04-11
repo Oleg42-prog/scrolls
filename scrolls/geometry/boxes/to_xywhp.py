@@ -4,9 +4,9 @@ from scrolls.geometry.boxes.convertors.complicated import xyxyn_to_xywhp
 from scrolls.geometry.boxes.convertors.simple import xywhn_to_xywhp
 from scrolls.geometry.boxes.convertors.complicated import cxywh_to_xywhp
 from scrolls.geometry.boxes.convertors.complicated import cxywhn_to_xywhp
-from scrolls.geometry.boxes.convertors.synonyms import xyxyp_to_xywhp
+from scrolls.geometry.boxes.convertors.representations import xyxyp_to_xywhp
 from scrolls.geometry.boxes.convertors.identity import xywhp_to_xywhp
-from scrolls.geometry.boxes.convertors.synonyms import cxywhp_to_xywhp
+from scrolls.geometry.boxes.convertors.representations import cxywhp_to_xywhp
 
 __all__ = [
     'xyxy_to_xywhp',
