@@ -14,7 +14,7 @@ def xyxy_to_xywh(xyxy):
 def xyxy_to_cxywh(xyxy):
     cxywh = apply_linear_operator([
         [0.5, 0, 0.5, 0],
-        [0, 0.5, 0.5, 0],
+        [0, 0.5, 0, 0.5],
         [-1, 0, 1, 0],
         [0, -1, 0, 1]
     ], xyxy)
