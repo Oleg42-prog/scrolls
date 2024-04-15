@@ -8,8 +8,9 @@ from tests.geometry.boxes.convertors import ground_truth as gt
 
 class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
 
+    EPS = 1e-6
+
     def setUp(self):
-        self.eps = 1e-6
         self.gt = gt.UNION_BIRDS
 
     def test_xyxy_to_xywh(self):
@@ -18,7 +19,7 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         xyxy = self.gt['xyxy']
         xywh = xyxy_to_xywh(xyxy)
 
-        np.testing.assert_allclose(xywh, xywh_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(xywh, xywh_gt, rtol=self.EPS, atol=self.EPS)
 
     def test_xyxy_to_cxywh(self):
         cxywh_gt = self.gt['cxywh']
@@ -26,7 +27,7 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         xyxy = self.gt['xyxy']
         cxywh = xyxy_to_cxywh(xyxy)
 
-        np.testing.assert_allclose(cxywh, cxywh_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(cxywh, cxywh_gt, rtol=self.EPS, atol=self.EPS)
 
     def test_xywh_to_xyxy(self):
         xyxy_gt = self.gt['xyxy']
@@ -34,7 +35,7 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         xywh = self.gt['xywh']
         xyxy = xywh_to_xyxy(xywh)
 
-        np.testing.assert_allclose(xyxy, xyxy_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(xyxy, xyxy_gt, rtol=self.EPS, atol=self.EPS)
 
     def test_xywh_to_cxywh(self):
         cxywh_gt = self.gt['cxywh']
@@ -42,7 +43,7 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         xywh = self.gt['xywh']
         cxywh = xywh_to_cxywh(xywh)
 
-        np.testing.assert_allclose(cxywh, cxywh_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(cxywh, cxywh_gt, rtol=self.EPS, atol=self.EPS)
 
     def test_cxywh_to_xyxy(self):
         xyxy_gt = self.gt['xyxy']
@@ -50,7 +51,7 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         cxywh = self.gt['cxywh']
         xyxy = cxywh_to_xyxy(cxywh)
 
-        np.testing.assert_allclose(xyxy, xyxy_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(xyxy, xyxy_gt, rtol=self.EPS, atol=self.EPS)
 
     def test_cxywh_to_xywh(self):
         xywh_gt = self.gt['xywh']
@@ -58,27 +59,24 @@ class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
         cxywh = self.gt['cxywh']
         xywh = cxywh_to_xywh(cxywh)
 
-        np.testing.assert_allclose(xywh, xywh_gt, rtol=self.eps, atol=self.eps)
+        np.testing.assert_allclose(xywh, xywh_gt, rtol=self.EPS, atol=self.EPS)
 
 
 class TestBoxConvertorsOriginalRepresentationsLeft(TestBoxConvertorsOriginalRepresentationsBase):
 
     def setUp(self):
-        self.eps = 1e-6
         self.gt = gt.LEFT_BIRD
 
 
 class TestBoxConvertorsOriginalRepresentationsRight(TestBoxConvertorsOriginalRepresentationsBase):
 
     def setUp(self):
-        self.eps = 1e-6
         self.gt = gt.RIGHT_BIRD
 
 
 class TestBoxConvertorsOriginalRepresentationsUnion(TestBoxConvertorsOriginalRepresentationsBase):
 
     def setUp(self):
-        self.eps = 1e-6
         self.gt = gt.UNION_BIRDS
 
 
