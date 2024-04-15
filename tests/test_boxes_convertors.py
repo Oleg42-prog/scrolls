@@ -36,10 +36,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(xywh.shape, xywh_gt.shape)
 
         for i in range(xywh.shape[0]):
-            self.assertAlmostEqual(xywh[i, 0], xywh_gt[i, 0])
-            self.assertAlmostEqual(xywh[i, 1], xywh_gt[i, 1])
-            self.assertAlmostEqual(xywh[i, 2], xywh_gt[i, 2])
-            self.assertAlmostEqual(xywh[i, 3], xywh_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(xywh[i, j], xywh_gt[i, j])
 
     def test_xyxy_to_cxywh(self):
         cxywh_gt = self.union['cxywh']
@@ -51,10 +50,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(cxywh.shape, cxywh_gt.shape)
 
         for i in range(cxywh.shape[0]):
-            self.assertAlmostEqual(cxywh[i, 0], cxywh_gt[i, 0])
-            self.assertAlmostEqual(cxywh[i, 1], cxywh_gt[i, 1])
-            self.assertAlmostEqual(cxywh[i, 2], cxywh_gt[i, 2])
-            self.assertAlmostEqual(cxywh[i, 3], cxywh_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(cxywh[i, j], cxywh_gt[i, j])
 
     def test_xywh_to_xyxy(self):
         xyxy_gt = self.union['xyxy']
@@ -66,10 +64,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(xyxy.shape, xyxy_gt.shape)
 
         for i in range(xyxy.shape[0]):
-            self.assertAlmostEqual(xyxy[i, 0], xyxy_gt[i, 0])
-            self.assertAlmostEqual(xyxy[i, 1], xyxy_gt[i, 1])
-            self.assertAlmostEqual(xyxy[i, 2], xyxy_gt[i, 2])
-            self.assertAlmostEqual(xyxy[i, 3], xyxy_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(xyxy[i, j], xyxy_gt[i, j])
 
     def test_xywh_to_cxywh(self):
         cxywh_gt = self.union['cxywh']
@@ -81,10 +78,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(cxywh.shape, cxywh_gt.shape)
 
         for i in range(cxywh.shape[0]):
-            self.assertAlmostEqual(cxywh[i, 0], cxywh_gt[i, 0])
-            self.assertAlmostEqual(cxywh[i, 1], cxywh_gt[i, 1])
-            self.assertAlmostEqual(cxywh[i, 2], cxywh_gt[i, 2])
-            self.assertAlmostEqual(cxywh[i, 3], cxywh_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(cxywh[i, j], cxywh_gt[i, j])
 
     def test_cxywh_to_xyxy(self):
         xyxy_gt = self.union['xyxy']
@@ -96,10 +92,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(xyxy.shape, xyxy_gt.shape)
 
         for i in range(xyxy.shape[0]):
-            self.assertAlmostEqual(xyxy[i, 0], xyxy_gt[i, 0])
-            self.assertAlmostEqual(xyxy[i, 1], xyxy_gt[i, 1])
-            self.assertAlmostEqual(xyxy[i, 2], xyxy_gt[i, 2])
-            self.assertAlmostEqual(xyxy[i, 3], xyxy_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(xyxy[i, j], xyxy_gt[i, j])
 
     def test_cxywh_to_xywh(self):
         xywh_gt = self.union['xywh']
@@ -111,10 +106,9 @@ class TestBoxConvertorsOriginalRepresentations(unittest.TestCase):
         self.assertEqual(xywh.shape, xywh_gt.shape)
 
         for i in range(xywh.shape[0]):
-            self.assertAlmostEqual(xywh[i, 0], xywh_gt[i, 0])
-            self.assertAlmostEqual(xywh[i, 1], xywh_gt[i, 1])
-            self.assertAlmostEqual(xywh[i, 2], xywh_gt[i, 2])
-            self.assertAlmostEqual(xywh[i, 3], xywh_gt[i, 3])
+            for j in range(4):
+                with self.subTest(i=i, j=j):
+                    self.assertAlmostEqual(xywh[i, j], xywh_gt[i, j])
 
 
 if __name__ == '__main__':
