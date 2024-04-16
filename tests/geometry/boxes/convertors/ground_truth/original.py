@@ -9,6 +9,12 @@ class BoxRepresentations:
     cxywh: np.array
 
 
+EMPTY = BoxRepresentations(
+    xyxy=np.array([]),
+    xywh=np.array([]),
+    cxywh=np.array([])
+)
+
 LEFT_BIRD = BoxRepresentations(
     xyxy=np.array([151, 62, 386, 527]),
     xywh=np.array([151, 62, 235, 465]),

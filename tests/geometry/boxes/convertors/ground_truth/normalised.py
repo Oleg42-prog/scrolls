@@ -11,6 +11,14 @@ class BoxNormalisedRepresentations:
     original_height: int
 
 
+EMPTY = BoxNormalisedRepresentations(
+    xyxyn=np.array([]),
+    xywhn=np.array([]),
+    cxywhn=np.array([]),
+    original_width=0,
+    original_height=0
+)
+
 NORMALISED_LEFT_BIRD = BoxNormalisedRepresentations(
     xyxyn=np.array([0.151, 0.11272727272727273, 0.386, 0.9581818181818181]),
     xywhn=np.array([0.151, 0.11272727272727273, 0.235, 0.8454545454545455]),

@@ -11,7 +11,7 @@ class TestBoxConvertorsNormalisedRepresentationsBase(unittest.TestCase):
     EPS = 1e-6
 
     def setUp(self):
-        self.gt = gt.NORMALISED_UNION_BIRDS
+        self.gt = gt.EMPTY
 
     def test_xyxyn_to_xywhn(self):
         xywhn = xyxyn_to_xywhn(self.gt.xyxyn)
