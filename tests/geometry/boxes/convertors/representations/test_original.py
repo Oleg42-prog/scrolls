@@ -3,7 +3,7 @@ import numpy as np
 from scrolls.geometry.boxes.convertors.representations.original import xyxy_to_xywh, xyxy_to_cxywh
 from scrolls.geometry.boxes.convertors.representations.original import xywh_to_xyxy, xywh_to_cxywh
 from scrolls.geometry.boxes.convertors.representations.original import cxywh_to_xyxy, cxywh_to_xywh
-from tests.geometry.boxes.convertors import ground_truth as gt
+from tests.geometry.boxes.convertors.ground_truth import original as gt
 
 
 class TestBoxConvertorsOriginalRepresentationsBase(unittest.TestCase):
